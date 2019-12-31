@@ -1,0 +1,20 @@
+@startuml
+
+class Character
+class MoveServer
+interface MoveInterface
+class MoveDown
+class MoveLeft
+class MoveRight
+class MoveUp
+
+
+MoveServer <|-- MoveInterface
+MoveServer <.. Character: Dependency
+MoveInterface <|.. MoveDown : Realization
+MoveInterface <|.. MoveLeft : Realization
+MoveInterface <|.. MoveRight : Realization
+MoveInterface <|.. MoveUp : Realization
+
+
+@enduml

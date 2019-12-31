@@ -1,0 +1,47 @@
+@startuml
+
+'Thread <|-- DrawThread : extends
+'Thread <|-- ReplayThread : extends
+'Runnable <.. Thread : Realize
+'Runnable <.. Character : Realize
+'
+'Character <|-- SmallEnemy : extends
+'Character <|-- Scorpion : extends
+'Character <|-- Calabash : extends
+'Character <|-- KeyCharacter: extends
+'
+'Calabash <|-- CalabashOne: extends
+''Calabash <|-- CalabashTwo: extends
+''Calabash <|-- CalabashThree: extends
+''Calabash <|-- CalabashFour: extends
+''Calabash <|-- CalabashFive: extends
+''Calabash <|-- CalabashSix: extends
+'Calabash <|-- CalabashSeven: extends
+'
+'KeyCharacter <-- GrandFather : extends
+'KeyCharacter <-- Snake : extends
+'Bullet <|-- IceBullet : extends
+'
+'
+'
+'BasicTeam <|-- EnemyTeam: extends
+'BasicTeam <|-- CalabashTeam: extends
+
+'Application <|-- Main : extends
+
+
+'
+Interface MoveInterface
+MoveServer <|-- MoveInterface
+MoveInterface <|.. MoveDown : Realization
+MoveInterface <|.. MoveLeft : Realization
+MoveInterface <|.. MoveRight : Realization
+MoveInterface <|.. MoveUp : Realization
+
+DrawServer <-- DrawBase
+DrawBase <|-- DrawBulletList: extends
+DrawBase <|-- DrawCalabashTeam: extends
+DrawBase <|-- DrawEnemyTeam: extends
+DrawBase <|-- DrawMap: extends
+
+@enduml
